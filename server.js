@@ -18,12 +18,12 @@ server.use("/post", cors(), postRouter);
 server.use("/user", cors(), userRouter);
 console.log(listRoutes(server));
 
-if (process.env.NODE_ENV === "production") {
-  server.use(express.static("client/build"));
-}
-server.get("*", (req, res) => {
-  server.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
-});
+// if (process.env.NODE_ENV === "production") {
+//   server.use(express.static("client/build"));
+// }
+// server.get("*", (req, res) => {
+//   server.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+// });
 
 mongoose
   .connect(
